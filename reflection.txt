@@ -5,3 +5,6 @@ I chose my validation rules based on what makes sense for a typical user and wha
 One security issue I specifically addressed was the password field. In the original form, the password was hidden off the screen using CSS and was not actually protected. I replaced this with a real password input, which masks the characters and prevents the password from being exposed in plain text.
 
 If this were a live production form, I would also add server-side validation, HTTPS encryption, and proper data handling to ensure full security.
+✍️ Ethical Integrity Declaration:
+I, Mairamu Hamidu, affirm that all work submitted in this case study is my own. I have not used AI tools, AI-generated text, or AI-based writing assistants (such as ChatGPT, Gemini, Grammarly AI, etc.) in the creation of this assignment. I understand that using AI tools for this project violates the spirit of ethical learning and may result in academic consequences.
+Signed: ________MH______________ Date: _____11/13/2025__________
