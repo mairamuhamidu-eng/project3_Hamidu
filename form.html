@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Submit User Info</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Create User</h2>
+
+    <form action="/inventory/search" method="post">
+        <fieldset>
+            <legend>User Information</legend>
+
+            <label for="username">Username:</label>
+            <input 
+                id="username" 
+                name="username" 
+                type="text" 
+                required 
+                maxlength="20" 
+                autocomplete="username"
+                placeholder="Enter a username" />
+
+            <label for="password">Password:</label>
+            <input 
+                id="password" 
+                name="password" 
+                type="password" 
+                required 
+                minlength="8" 
+                autocomplete="new-password"
+                placeholder="At least 8 characters" />
+
+            <label for="age">Age:</label>
+            <input 
+                id="age" 
+                name="age" 
+                type="number" 
+                required 
+                min="1" 
+                max="120"
+                placeholder="e.g., 21" />
+
+            <label for="email">Email:</label>
+            <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                required 
+                autocomplete="email"
+                placeholder="you@example.com" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Message</legend>
+
+            <label for="message">Message (10 words or less):</label>
+            <textarea 
+                id="message" 
+                name="message"
+                placeholder="Type your short message here"></textarea>
+            <p id="word-count">0 / 10 words</p>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    const messageField = document.getElementById("message");
+    const wordCountDisplay = document.getElementById("word-count");
+
+    messageField.addEventListener("input", function () {
+        let text = messageField.value.trim();
+
+        if (text === "") {
+            wordCountDisplay.textContent = "0 / 10 words";
+            return;
+        }
+
+        let words = text.split(/\s+/).filter(w => w.length > 0);
+
+        if (words.length > 10) {
+            words = words.slice(0, 10);
+            messageField.value = words.join(" ");
+        }
+
+        wordCountDisplay.textContent = words.length + " / 10 words";
+    });
+</script>
+
+</body>
+</html>

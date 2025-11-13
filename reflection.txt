@@ -1,0 +1,7 @@
+For this project, I redesigned the original form to make it more secure, more usable, and compliant with the assignment requirements. One of the most important changes I made was correcting the form method. The original form used “DELETE,” which is not valid for HTML forms and could cause user data to be exposed in the URL. Changing it to “POST” makes data submission safer and aligns with secure form-handling practices. I also replaced all plain input fields with correct input types such as text, password, number, and email. This allows the browser to automatically provide validation and prevents incorrect or unsafe input.
+
+I chose my validation rules based on what makes sense for a typical user and what helps protect the form. For example, I set the username to a maximum of 20 characters, enforced a minimum password length of eight characters, required a proper email format, and limited the age field to a reasonable range. These rules prevent users from entering harmful, overly long, or invalid information.
+
+One security issue I specifically addressed was the password field. In the original form, the password was hidden off the screen using CSS and was not actually protected. I replaced this with a real password input, which masks the characters and prevents the password from being exposed in plain text.
+
+If this were a live production form, I would also add server-side validation, HTTPS encryption, and proper data handling to ensure full security.
